@@ -1,0 +1,7 @@
+{
+  "students": [
+    { "id": 1, "name": "Aarav Mehta", "course": "Full Stack Development", "progress": 85 },
+    { "id": 2, "name": "Sneha Reddy", "course": "Machine Learning", "progress": 78 },
+    { "id": 3, "name": "Rahul Singh", "course": "Cloud Computing", "progress": 90 }
+  ]
+}

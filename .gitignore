@@ -1,14 +1,23 @@
-/vscode
+# VS Code
+.vscode/
 .DS_Store
-/node_modules
 
-# ignore code scanning from package-lock
+# Node dependencies
+node_modules/
+
+# Build output
+dist/
+dist.zip
+
+# Package lock (optional, reduces size)
 package-lock.json
 
-dist.zip
+# Yarn
 .yarn/*
 !.yarn/releases
 !.yarn/plugins
 .pnp.*
-dist/*
+
+# Temporary or zipped files
 template.zip
+*.log

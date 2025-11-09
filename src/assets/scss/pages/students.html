@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Progress | Mazer Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/main/app.css" />
+    <link rel="stylesheet" href="../assets/css/pages/dashboard.css" />
+  </head>
+  <body>
+    <div id="main">
+      <header class="mb-3">
+        <h2 class="text-center mt-3">📚 Student Progress Dashboard</h2>
+      </header>
+
+      <div class="container mt-5">
+        <table class="table table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Course</th>
+              <th>Progress (%)</th>
+            </tr>
+          </thead>
+          <tbody id="studentTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script type="module">
+      fetch('../data/data.json')
+        .then(res => res.json())
+        .then(data => {
+          const tbody = document.getElementById('studentTable');
+          data.students.forEach(stu => {
+            tbody.innerHTML += `
+              <tr>
+                <td>${stu.id}</td>
+                <td>${stu.name}</td>
+                <td>${stu.course}</td>
+                <td>${stu.progress}</td>
+              </tr>
+            `;
+          });
+        })
+        .catch(err => console.error('Error loading data:', err));
+    </script>
+  </body>
+</html>
